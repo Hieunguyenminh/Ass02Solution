@@ -2,7 +2,7 @@
 
 namespace DataAcess.Respository
 {
-    public class MemberRespoitory : IMemberRespository
+    public class MemberRespository : IMemberRespository
     {
         public void DeleteMember(int memberID) => MemberDAO.Instance.RemoveByID(memberID);
 

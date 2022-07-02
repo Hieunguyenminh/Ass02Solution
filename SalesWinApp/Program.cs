@@ -1,6 +1,6 @@
 namespace SalesWinApp
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
@@ -11,7 +11,19 @@ namespace SalesWinApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmLogin());
+            frmLogin frmLogin = new frmLogin();
+            Application.Run(frmLogin);
+            if (frmLogin.UserSuccessfullAuthentication)
+            {
+                if (frmLogin.isAdmin == true)
+                {
+                    Application.Run(new frmMain() { isAdmin = true });
+                }
+                else
+                {
+                    Application.Run(new frmMain() { isAdmin = false, id=frmLogin.id });
+                }
+            }
         }
     }
 }
