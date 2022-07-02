@@ -12,9 +12,16 @@ namespace SalesWinApp
 {
     public partial class frmProducts : Form
     {
+        public bool isAdmin { get; set; }
+        public int id { get; set; }
         public frmProducts()
         {
             InitializeComponent();
+        }
+
+        private void frmProducts_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
