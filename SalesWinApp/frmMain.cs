@@ -50,7 +50,7 @@ namespace SalesWinApp
         {
             if (!CheckExistForm("frmOrders"))
             {
-                frmOrders frm = new frmOrders() { isAdmin = this.isAdmin };
+                frmOrderDetail frm = new frmOrderDetail() { isAdmin = this.isAdmin };
                 frm.MdiParent = this;
                 frm.Show();
             }

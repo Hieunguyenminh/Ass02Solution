@@ -352,5 +352,10 @@ namespace SalesWinApp
             }
             
         }
+
+        private void lbMemberID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

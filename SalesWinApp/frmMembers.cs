@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BussinessObject.Models;
+using System.Windows.Forms;
+using DataAcess.Respository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +16,9 @@ namespace SalesWinApp
     public partial class frmMembers : Form
     {
         public bool isAdmin { get; set; }
-        public int id { get; set; }
+        public bool InsertOrUpdate { get; set; }
+        public Member MemberInfor { get; set; }
+        public IMemberRespository MemberRepository { get; set; }
         public frmMembers()
         {
             InitializeComponent();
@@ -21,36 +26,72 @@ namespace SalesWinApp
 
         private void frmMembers_Load(object sender, EventArgs e)
         {
-
+            cboCity.SelectedIndex = 0;
+            cboCountry.SelectedIndex = 0;
+            txtMemberID.Enabled = !InsertOrUpdate;
+            if (InsertOrUpdate == true)//update mode
+            {
+                //Show member to perform updating
+                txtMemberID.Text = MemberInfor.MemberId.ToString();
+                txtMemberName.Text = MemberInfor.CompanyName;
+                cboCity.Text = MemberInfor.City;
+                txtEmail.Text = MemberInfor.Email;
+                cboCountry.Text = MemberInfor.Country;
+                txtPassword.Text = MemberInfor.Password;
+            }
         }
 
-<<<<<<< HEAD
-        private void label2_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e) => Close();
+        private void btnSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Boolean check = false;
+                var list = MemberRepository.GetMembers();
+                foreach (var i in list)
+                {
+                    if (txtEmail.Text.Equals(i.Email) && !txtMemberID.Text.Equals(i.MemberId.ToString()))
+                    {
+                        MessageBox.Show("This email exists. Please check again!", InsertOrUpdate == false ? "Add a new Member" : "Update a Member");
+                        check = true;
+                    }
+                }
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, @"^(?!\s*$).+")
+                    && System.Text.RegularExpressions.Regex.IsMatch(txtMemberID.Text, @"^(?!\s*$).+")
+                    && System.Text.RegularExpressions.Regex.IsMatch(txtMemberName.Text, @"^(?!\s*$).+")
+                    && System.Text.RegularExpressions.Regex.IsMatch(cboCity.Text, @"^(?!\s*$).+")
+                    && System.Text.RegularExpressions.Regex.IsMatch(cboCountry.Text, @"^(?!\s*$).+")
+                    && System.Text.RegularExpressions.Regex.IsMatch(txtPassword.Text, @"^(?!\s*$).+")&&check==false)
+                {
+                    var member = new Member
+                    {
+                        MemberId = int.Parse(txtMemberID.Text),
+                        CompanyName = txtMemberName.Text,
+                        City = cboCity.Text,
+                        Email = txtEmail.Text,
+                        Country = cboCountry.Text,
+                        Password = txtPassword.Text,
+                    };
+                    if (InsertOrUpdate == false)
+                    {
+                        MemberRepository.InsertMember(member);
+                    }
+                    else
+                    {
+                        MemberRepository.UpdateMember(member);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please double check every fields must not be null, empty or spaces only!", InsertOrUpdate == false ? "Add a new Member" : "Update a Member");
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add a new Member" : "Update a Member");
+            }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-=======
-        private void textBox4_TextChanged(object sender, EventArgs e)
->>>>>>> origin
-        {
-
-        }
+        
     }
 }
