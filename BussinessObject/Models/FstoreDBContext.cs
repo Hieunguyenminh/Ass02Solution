@@ -25,7 +25,7 @@ namespace BussinessObject.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("server =(local); database = FstoreDB;uid=sa;pwd=123;");
+                optionsBuilder.UseSqlServer("server =(local); database = FstoreDB;uid=sa;pwd=QuanNM_0516;");
             }
         }
 
