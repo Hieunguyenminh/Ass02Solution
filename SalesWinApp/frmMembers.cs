@@ -15,6 +15,7 @@ namespace SalesWinApp
 {
     public partial class frmMembers : Form
     {
+        public int id { get; set; }
         public bool isAdmin { get; set; }
         public bool InsertOrUpdate { get; set; }
         public Member MemberInfor { get; set; }

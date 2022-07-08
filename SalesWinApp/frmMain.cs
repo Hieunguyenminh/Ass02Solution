@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace SalesWinApp
 {
@@ -19,73 +11,63 @@ namespace SalesWinApp
             InitializeComponent();
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void memberToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-
-        }
-
-        private void memberToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!CheckExistForm("frmMembers")) 
+            if (!CheckExistForm("frmMemberManagements"))
             {
-                frmMembers frm = new frmMembers() { isAdmin = this.isAdmin, id = this.id };
+                frmMemberManagements frm = new frmMemberManagements() { isAdmin = this.isAdmin, id = this.id };
                 frm.MdiParent = this;
                 frm.Show();
             }
-            else AcctiveChildForm("frmMembers");
+            else ActiveChildForm("frmMemberManagements");
         }
 
-        private void productToolStripMenuItem_Click(object sender, EventArgs e)
+        private void productToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            if (!CheckExistForm("frmProducts"))
+            if (!CheckExistForm("frmProductManagements"))
             {
-                frmProducts frm = new frmProducts() { isAdmin = this.isAdmin };
+                frmProductManagement frm = new frmProductManagement() { isAdmin = this.isAdmin };
                 frm.MdiParent = this;
                 frm.Show();
             }
-            else AcctiveChildForm("frmProducts");
+            else ActiveChildForm("frmProductManagements");
         }
 
-        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
+        /*private void orderToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            if (!CheckExistForm("frmOrders"))
+            if (!CheckExistForm("frmOrderManagements"))
             {
-                frmOrderDetail frm = new frmOrderDetail() { isAdmin = this.isAdmin };
+                frmOrderManagement frm = new frmOrderManagement() { isAdmin = this.isAdmin, id = this.id };
                 frm.MdiParent = this;
                 frm.Show();
             }
-            else
-            {
-                AcctiveChildForm("frmOrders");
-            }
-        }
+            else ActiveChildForm("frmOrderManagements");
 
-        //check form exist
+        }*/
+
         private bool CheckExistForm(string name)
         {
-            bool check=false;
-            foreach(Form frm in this.MdiChildren)
+            bool check = false;
+            foreach (Form frm in this.MdiChildren)
             {
-                if(frm.Name == name)
+                if (frm.Name == name)
                 {
-                    check=true;
+                    check = true;
                     break;
                 }
             }
             return check;
         }
-
-        private void AcctiveChildForm(string name)
+        private void ActiveChildForm(string name)
         {
-            foreach(Form frm in this.MdiChildren)
+            foreach (Form frm in this.MdiChildren)
             {
-                if(frm.Name == name)
+                if (frm.Name == name)
                 {
                     frm.Activate();
                     break;
                 }
             }
         }
-
     }
 }

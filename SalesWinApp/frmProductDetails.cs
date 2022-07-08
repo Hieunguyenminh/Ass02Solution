@@ -14,6 +14,8 @@ namespace SalesWinApp
 {
     public partial class frmProductDetails : Form
     {
+        public bool isAdmin { get; set; }
+        public int id { get; set; }
         public IProductRespository ProductRespository { get; set; }
         public bool InsertOrUpdate { get; set; }
         public Product Product { get; set; }

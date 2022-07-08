@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace SalesWinApp
 {
-    public partial class frmOrders : Form
+    public partial class frmOrderDetail : Form
     {
         public bool isAdmin { get; set; }
         public int id { get; set; }
-        public frmOrders()
+        public frmOrderDetail()
         {
             InitializeComponent();
         }

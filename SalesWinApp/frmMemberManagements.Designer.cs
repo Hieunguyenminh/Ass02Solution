@@ -63,7 +63,7 @@
             this.lbMemberID.Size = new System.Drawing.Size(84, 20);
             this.lbMemberID.TabIndex = 1;
             this.lbMemberID.Text = "Member ID";
-            this.lbMemberID.Click += new System.EventHandler(this.lbMemberID_Click);
+            /*this.lbMemberID.Click += new System.EventHandler(this.lbMemberID_Click);*/
             // 
             // lbMemberName
             // 
@@ -287,7 +287,7 @@
             this.dgvMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMemberList.Size = new System.Drawing.Size(777, 214);
             this.dgvMemberList.TabIndex = 28;
-            this.dgvMemberList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMemberList_CellContentClick);
+            /*this.dgvMemberList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMemberList_CellContentClick);*/
             // 
             // btnClose
             // 
