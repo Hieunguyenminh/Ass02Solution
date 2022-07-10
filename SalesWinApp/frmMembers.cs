@@ -29,6 +29,7 @@ namespace SalesWinApp
         {
             cboCity.SelectedIndex = 0;
             cboCountry.SelectedIndex = 0;
+            txtPassword.Enabled = true;
             txtMemberID.Enabled = !InsertOrUpdate;
             if (InsertOrUpdate == true)//update mode
             {
@@ -62,7 +63,7 @@ namespace SalesWinApp
                     && System.Text.RegularExpressions.Regex.IsMatch(txtMemberName.Text, @"^(?!\s*$).+")
                     && System.Text.RegularExpressions.Regex.IsMatch(cboCity.Text, @"^(?!\s*$).+")
                     && System.Text.RegularExpressions.Regex.IsMatch(cboCountry.Text, @"^(?!\s*$).+")
-                    && System.Text.RegularExpressions.Regex.IsMatch(txtPassword.Text, @"^(?!\s*$).+")&&check==false)
+                    && System.Text.RegularExpressions.Regex.IsMatch(txtPassword.Text, @"^(?!\s*$).+") && check == false)
                 {
                     var member = new Member
                     {
@@ -93,6 +94,6 @@ namespace SalesWinApp
                 MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add a new Member" : "Update a Member");
             }
         }
-        
+
     }
 }

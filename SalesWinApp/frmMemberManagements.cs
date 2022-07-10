@@ -337,7 +337,7 @@ namespace SalesWinApp
         {
 
             Member member = new Member();
-            List<Member> filterList = memberRepository.GetMembersByCityAndCountry(cboSearchCity.Text, cboSearchCountry.Text);
+            List<Member> filterList = memberRepository.GetMembersByCityOrCountry(cboSearchCity.Text, cboSearchCountry.Text);
             // var members = memberRepository.GetMembers();
             try
             {

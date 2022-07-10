@@ -12,7 +12,7 @@ namespace DataAcess.Respository
 
         public IEnumerable<Member> GetMembers() => MemberDAO.Instance.GetMembersList();
 
-        public List<Member> GetMembersByCityAndCountry(string city, string country) => MemberDAO.Instance.GetMemberByCityAndCountry(city, country);
+        public List<Member> GetMembersByCityOrCountry(string city, string country) => MemberDAO.Instance.GetMemberByCityOrCountry(city, country);
 
         public IEnumerable<Member> GetMembersByIDList(int memberID) => MemberDAO.Instance.GetMemberByIDList(memberID);
 
