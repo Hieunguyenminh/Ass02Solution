@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lbMemberID = new System.Windows.Forms.Label();
-            this.lbMemberName = new System.Windows.Forms.Label();
+            this.lbCompanyName = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
             this.txtMemberID = new System.Windows.Forms.TextBox();
             this.txtMemberName = new System.Windows.Forms.TextBox();
@@ -63,17 +63,16 @@
             this.lbMemberID.Size = new System.Drawing.Size(84, 20);
             this.lbMemberID.TabIndex = 1;
             this.lbMemberID.Text = "Member ID";
-            /*this.lbMemberID.Click += new System.EventHandler(this.lbMemberID_Click);*/
             // 
-            // lbMemberName
+            // lbCompanyName
             // 
-            this.lbMemberName.AutoSize = true;
-            this.lbMemberName.Location = new System.Drawing.Point(30, 74);
-            this.lbMemberName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbMemberName.Name = "lbMemberName";
-            this.lbMemberName.Size = new System.Drawing.Size(109, 20);
-            this.lbMemberName.TabIndex = 3;
-            this.lbMemberName.Text = "Member Name";
+            this.lbCompanyName.AutoSize = true;
+            this.lbCompanyName.Location = new System.Drawing.Point(30, 74);
+            this.lbCompanyName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCompanyName.Name = "lbCompanyName";
+            this.lbCompanyName.Size = new System.Drawing.Size(116, 20);
+            this.lbCompanyName.TabIndex = 3;
+            this.lbCompanyName.Text = "Company Name";
             // 
             // lbPassword
             // 
@@ -88,7 +87,7 @@
             // txtMemberID
             // 
             this.txtMemberID.Location = new System.Drawing.Point(166, 21);
-            this.txtMemberID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMemberID.Margin = new System.Windows.Forms.Padding(2);
             this.txtMemberID.Name = "txtMemberID";
             this.txtMemberID.Size = new System.Drawing.Size(155, 27);
             this.txtMemberID.TabIndex = 5;
@@ -96,7 +95,7 @@
             // txtMemberName
             // 
             this.txtMemberName.Location = new System.Drawing.Point(166, 69);
-            this.txtMemberName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMemberName.Margin = new System.Windows.Forms.Padding(2);
             this.txtMemberName.Name = "txtMemberName";
             this.txtMemberName.Size = new System.Drawing.Size(155, 27);
             this.txtMemberName.TabIndex = 11;
@@ -104,7 +103,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(166, 116);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.ReadOnly = true;
@@ -144,7 +143,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(443, 21);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(145, 27);
             this.txtEmail.TabIndex = 16;
@@ -155,7 +154,7 @@
             this.cboCountry.Items.AddRange(new object[] {
             "Viet Nam"});
             this.cboCountry.Location = new System.Drawing.Point(443, 66);
-            this.cboCountry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboCountry.Margin = new System.Windows.Forms.Padding(2);
             this.cboCountry.Name = "cboCountry";
             this.cboCountry.Size = new System.Drawing.Size(146, 28);
             this.cboCountry.TabIndex = 17;
@@ -170,7 +169,7 @@
             "Phu Quoc",
             "Vung Tau"});
             this.cboCity.Location = new System.Drawing.Point(443, 116);
-            this.cboCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboCity.Margin = new System.Windows.Forms.Padding(2);
             this.cboCity.Name = "cboCity";
             this.cboCity.Size = new System.Drawing.Size(146, 28);
             this.cboCity.TabIndex = 18;
@@ -178,7 +177,7 @@
             // btnLoad
             // 
             this.btnLoad.Location = new System.Drawing.Point(30, 208);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(90, 27);
             this.btnLoad.TabIndex = 19;
@@ -189,7 +188,7 @@
             // btnNew
             // 
             this.btnNew.Location = new System.Drawing.Point(166, 208);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(90, 27);
             this.btnNew.TabIndex = 20;
@@ -200,7 +199,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(275, 208);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 27);
             this.btnDelete.TabIndex = 21;
@@ -217,7 +216,7 @@
             "America",
             "United Kingdom"});
             this.cboSearchCountry.Location = new System.Drawing.Point(398, 208);
-            this.cboSearchCountry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboSearchCountry.Margin = new System.Windows.Forms.Padding(2);
             this.cboSearchCountry.Name = "cboSearchCountry";
             this.cboSearchCountry.Size = new System.Drawing.Size(97, 28);
             this.cboSearchCountry.TabIndex = 22;
@@ -227,7 +226,7 @@
             // 
             this.cboSearchCity.FormattingEnabled = true;
             this.cboSearchCity.Location = new System.Drawing.Point(509, 208);
-            this.cboSearchCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboSearchCity.Margin = new System.Windows.Forms.Padding(2);
             this.cboSearchCity.Name = "cboSearchCity";
             this.cboSearchCity.Size = new System.Drawing.Size(97, 28);
             this.cboSearchCity.TabIndex = 23;
@@ -236,7 +235,7 @@
             // btnFind
             // 
             this.btnFind.Location = new System.Drawing.Point(671, 207);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(2);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(90, 27);
             this.btnFind.TabIndex = 24;
@@ -257,7 +256,7 @@
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(148, 262);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "Search Member";
             this.txtSearch.Size = new System.Drawing.Size(488, 27);
@@ -266,7 +265,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(671, 262);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(90, 27);
             this.btnSearch.TabIndex = 27;
@@ -287,7 +286,6 @@
             this.dgvMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMemberList.Size = new System.Drawing.Size(777, 214);
             this.dgvMemberList.TabIndex = 28;
-            /*this.dgvMemberList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMemberList_CellContentClick);*/
             // 
             // btnClose
             // 
@@ -326,9 +324,9 @@
             this.Controls.Add(this.txtMemberName);
             this.Controls.Add(this.txtMemberID);
             this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.lbMemberName);
+            this.Controls.Add(this.lbCompanyName);
             this.Controls.Add(this.lbMemberID);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMemberManagements";
             this.Text = "frmMemberManagements";
             this.Load += new System.EventHandler(this.frmMemberManagements_Load);
@@ -341,7 +339,7 @@
         #endregion
 
         private Label lbMemberID;
-        private Label lbMemberName;
+        private Label lbCompanyName;
         private Label lbPassword;
         private TextBox txtMemberID;
         private TextBox txtMemberName;

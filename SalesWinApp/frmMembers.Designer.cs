@@ -30,12 +30,12 @@
         {
             this.lbMemberID = new System.Windows.Forms.Label();
             this.txtMemberID = new System.Windows.Forms.TextBox();
-            this.lbMemberName = new System.Windows.Forms.Label();
+            this.lbCompanyName = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbCountry = new System.Windows.Forms.Label();
             this.lbCity = new System.Windows.Forms.Label();
-            this.txtMemberName = new System.Windows.Forms.TextBox();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.cboCountry = new System.Windows.Forms.ComboBox();
@@ -60,14 +60,14 @@
             this.txtMemberID.Size = new System.Drawing.Size(193, 27);
             this.txtMemberID.TabIndex = 1;
             // 
-            // lbMemberName
+            // lbCompanyName
             // 
-            this.lbMemberName.AutoSize = true;
-            this.lbMemberName.Location = new System.Drawing.Point(12, 91);
-            this.lbMemberName.Name = "lbMemberName";
-            this.lbMemberName.Size = new System.Drawing.Size(109, 20);
-            this.lbMemberName.TabIndex = 2;
-            this.lbMemberName.Text = "Member Name";
+            this.lbCompanyName.AutoSize = true;
+            this.lbCompanyName.Location = new System.Drawing.Point(12, 91);
+            this.lbCompanyName.Name = "lbCompanyName";
+            this.lbCompanyName.Size = new System.Drawing.Size(116, 20);
+            this.lbCompanyName.TabIndex = 2;
+            this.lbCompanyName.Text = "Company Name";
             // 
             // lbPassword
             // 
@@ -105,12 +105,12 @@
             this.lbCity.TabIndex = 6;
             this.lbCity.Text = "City";
             // 
-            // txtMemberName
+            // txtCompanyName
             // 
-            this.txtMemberName.Location = new System.Drawing.Point(152, 87);
-            this.txtMemberName.Name = "txtMemberName";
-            this.txtMemberName.Size = new System.Drawing.Size(193, 27);
-            this.txtMemberName.TabIndex = 10;
+            this.txtCompanyName.Location = new System.Drawing.Point(152, 87);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(193, 27);
+            this.txtCompanyName.TabIndex = 10;
             // 
             // txtPassword
             // 
@@ -142,7 +142,6 @@
             "Saudi Arabia",
             "Franch",
             "United Kingdom"});
-            this.cboCountry.FormattingEnabled = true;
             this.cboCountry.Location = new System.Drawing.Point(519, 88);
             this.cboCountry.Name = "cboCountry";
             this.cboCountry.Size = new System.Drawing.Size(182, 28);
@@ -161,7 +160,6 @@
             "Washington DC",
             "Sydney",
             "Seoul"});
-            this.cboCity.FormattingEnabled = true;
             this.cboCity.Location = new System.Drawing.Point(519, 144);
             this.cboCity.Name = "cboCity";
             this.cboCity.Size = new System.Drawing.Size(182, 28);
@@ -200,12 +198,12 @@
             this.Controls.Add(this.cboCountry);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtMemberName);
+            this.Controls.Add(this.txtCompanyName);
             this.Controls.Add(this.lbCity);
             this.Controls.Add(this.lbCountry);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.lbMemberName);
+            this.Controls.Add(this.lbCompanyName);
             this.Controls.Add(this.txtMemberID);
             this.Controls.Add(this.lbMemberID);
             this.Name = "frmMembers";
@@ -220,12 +218,12 @@
 
         private Label lbMemberID;
         private TextBox txtMemberID;
-        private Label lbMemberName;
+        private Label lbCompanyName;
         private Label lbPassword;
         private Label lbEmail;
         private Label lbCountry;
         private Label lbCity;
-        private TextBox txtMemberName;
+        private TextBox txtCompanyName;
         private TextBox txtPassword;
         private TextBox txtEmail;
         private ComboBox cboCountry;

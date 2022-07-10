@@ -1,5 +1,4 @@
 ﻿using BussinessObject.Models;
-using System.Windows.Forms;
 using DataAcess.Respository;
 using System;
 using System.Collections.Generic;
@@ -15,11 +14,11 @@ namespace SalesWinApp
 {
     public partial class frmMembers : Form
     {
-        public int id { get; set; }
         public bool isAdmin { get; set; }
+        public int id { get; set; }
+        public IMemberRespository MemberRepository { get; set; }
         public bool InsertOrUpdate { get; set; }
         public Member MemberInfor { get; set; }
-        public IMemberRespository MemberRepository { get; set; }
         public frmMembers()
         {
             InitializeComponent();
@@ -28,13 +27,12 @@ namespace SalesWinApp
         private void frmMembers_Load(object sender, EventArgs e)
         {
             cboCity.SelectedIndex = 0;
-            cboCountry.SelectedIndex = 0;
             txtMemberID.Enabled = !InsertOrUpdate;
             if (InsertOrUpdate == true)//update mode
             {
                 //Show member to perform updating
                 txtMemberID.Text = MemberInfor.MemberId.ToString();
-                txtMemberName.Text = MemberInfor.CompanyName;
+                txtCompanyName.Text = MemberInfor.CompanyName;
                 cboCity.Text = MemberInfor.City;
                 txtEmail.Text = MemberInfor.Email;
                 cboCountry.Text = MemberInfor.Country;
@@ -42,7 +40,6 @@ namespace SalesWinApp
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e) => Close();
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -59,15 +56,15 @@ namespace SalesWinApp
                 }
                 if (System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, @"^(?!\s*$).+")
                     && System.Text.RegularExpressions.Regex.IsMatch(txtMemberID.Text, @"^(?!\s*$).+")
-                    && System.Text.RegularExpressions.Regex.IsMatch(txtMemberName.Text, @"^(?!\s*$).+")
+                    && System.Text.RegularExpressions.Regex.IsMatch(txtCompanyName.Text, @"^(?!\s*$).+")
                     && System.Text.RegularExpressions.Regex.IsMatch(cboCity.Text, @"^(?!\s*$).+")
                     && System.Text.RegularExpressions.Regex.IsMatch(cboCountry.Text, @"^(?!\s*$).+")
-                    && System.Text.RegularExpressions.Regex.IsMatch(txtPassword.Text, @"^(?!\s*$).+")&&check==false)
+                    && System.Text.RegularExpressions.Regex.IsMatch(txtPassword.Text, @"^(?!\s*$).+") && check == false)
                 {
                     var member = new Member
                     {
                         MemberId = int.Parse(txtMemberID.Text),
-                        CompanyName = txtMemberName.Text,
+                        CompanyName = txtCompanyName.Text,
                         City = cboCity.Text,
                         Email = txtEmail.Text,
                         Country = cboCountry.Text,
@@ -93,6 +90,12 @@ namespace SalesWinApp
                 MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add a new Member" : "Update a Member");
             }
         }
-        
+
+        private void btnCancel_Click(object sender, EventArgs e) => Close();
+
+        private void txtMemberID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
