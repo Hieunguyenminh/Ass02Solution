@@ -47,7 +47,7 @@
             // lbMemberID
             // 
             this.lbMemberID.AutoSize = true;
-            this.lbMemberID.Location = new System.Drawing.Point(28, 27);
+            this.lbMemberID.Location = new System.Drawing.Point(26, 30);
             this.lbMemberID.Name = "lbMemberID";
             this.lbMemberID.Size = new System.Drawing.Size(66, 15);
             this.lbMemberID.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             // txtMemberID
             // 
-            this.txtMemberID.Location = new System.Drawing.Point(133, 26);
+            this.txtMemberID.Location = new System.Drawing.Point(133, 31);
             this.txtMemberID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMemberID.Name = "txtMemberID";
             this.txtMemberID.Size = new System.Drawing.Size(169, 23);
@@ -63,17 +63,17 @@
             // 
             // lbMemberName
             // 
-            this.lbMemberName.AutoSize = true;
-            this.lbMemberName.Location = new System.Drawing.Point(10, 68);
-            this.lbMemberName.Name = "lbMemberName";
-            this.lbMemberName.Size = new System.Drawing.Size(87, 15);
-            this.lbMemberName.TabIndex = 2;
-            this.lbMemberName.Text = "Member Name";
+            this.lbCompanyName.AutoSize = true;
+            this.lbCompanyName.Location = new System.Drawing.Point(26, 70);
+            this.lbCompanyName.Name = "lbCompanyName";
+            this.lbCompanyName.Size = new System.Drawing.Size(94, 15);
+            this.lbCompanyName.TabIndex = 2;
+            this.lbCompanyName.Text = "Company Name";
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(28, 108);
+            this.lbPassword.Location = new System.Drawing.Point(26, 110);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(57, 15);
             this.lbPassword.TabIndex = 3;
@@ -91,7 +91,7 @@
             // lbCountry
             // 
             this.lbCountry.AutoSize = true;
-            this.lbCountry.Location = new System.Drawing.Point(355, 65);
+            this.lbCountry.Location = new System.Drawing.Point(355, 70);
             this.lbCountry.Name = "lbCountry";
             this.lbCountry.Size = new System.Drawing.Size(50, 15);
             this.lbCountry.TabIndex = 5;
@@ -100,7 +100,7 @@
             // lbCity
             // 
             this.lbCity.AutoSize = true;
-            this.lbCity.Location = new System.Drawing.Point(358, 108);
+            this.lbCity.Location = new System.Drawing.Point(355, 110);
             this.lbCity.Name = "lbCity";
             this.lbCity.Size = new System.Drawing.Size(28, 15);
             this.lbCity.TabIndex = 6;
@@ -108,15 +108,15 @@
             // 
             // txtMemberName
             // 
-            this.txtMemberName.Location = new System.Drawing.Point(133, 65);
-            this.txtMemberName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMemberName.Name = "txtMemberName";
-            this.txtMemberName.Size = new System.Drawing.Size(169, 23);
-            this.txtMemberName.TabIndex = 10;
+            this.txtCompanyName.Location = new System.Drawing.Point(133, 68);
+            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(169, 23);
+            this.txtCompanyName.TabIndex = 10;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(456, 25);
+            this.txtEmail.Location = new System.Drawing.Point(443, 31);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(158, 23);
@@ -134,9 +134,9 @@
             "China",
             "Australia",
             "Saudi Arabia",
-            "Franch",
+            "France",
             "United Kingdom"});
-            this.cboCountry.Location = new System.Drawing.Point(454, 66);
+            this.cboCountry.Location = new System.Drawing.Point(443, 70);
             this.cboCountry.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboCountry.Name = "cboCountry";
             this.cboCountry.Size = new System.Drawing.Size(160, 23);
@@ -154,8 +154,9 @@
             "Chicago",
             "Washington DC",
             "Sydney",
-            "Seoul"});
-            this.cboCity.Location = new System.Drawing.Point(454, 108);
+            "Seoul",
+            "XiangHai"});
+            this.cboCity.Location = new System.Drawing.Point(443, 108);
             this.cboCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboCity.Name = "cboCity";
             this.cboCity.Size = new System.Drawing.Size(160, 23);
@@ -164,7 +165,7 @@
             // btnSave
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSave.Location = new System.Drawing.Point(133, 180);
+            this.btnSave.Location = new System.Drawing.Point(166, 168);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 22);
@@ -176,7 +177,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(409, 180);
+            this.btnCancel.Location = new System.Drawing.Point(416, 168);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(82, 22);
@@ -187,7 +188,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(133, 100);
+            this.txtPassword.Location = new System.Drawing.Point(133, 108);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(169, 23);
