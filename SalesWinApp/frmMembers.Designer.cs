@@ -47,7 +47,7 @@
             // lbMemberID
             // 
             this.lbMemberID.AutoSize = true;
-            this.lbMemberID.Location = new System.Drawing.Point(32, 36);
+            this.lbMemberID.Location = new System.Drawing.Point(30, 40);
             this.lbMemberID.Name = "lbMemberID";
             this.lbMemberID.Size = new System.Drawing.Size(84, 20);
             this.lbMemberID.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             // txtMemberID
             // 
-            this.txtMemberID.Location = new System.Drawing.Point(152, 35);
+            this.txtMemberID.Location = new System.Drawing.Point(152, 41);
             this.txtMemberID.Name = "txtMemberID";
             this.txtMemberID.Size = new System.Drawing.Size(193, 27);
             this.txtMemberID.TabIndex = 1;
@@ -63,7 +63,7 @@
             // lbCompanyName
             // 
             this.lbCompanyName.AutoSize = true;
-            this.lbCompanyName.Location = new System.Drawing.Point(11, 91);
+            this.lbCompanyName.Location = new System.Drawing.Point(30, 94);
             this.lbCompanyName.Name = "lbCompanyName";
             this.lbCompanyName.Size = new System.Drawing.Size(116, 20);
             this.lbCompanyName.TabIndex = 2;
@@ -72,7 +72,7 @@
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(32, 144);
+            this.lbPassword.Location = new System.Drawing.Point(30, 147);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(70, 20);
             this.lbPassword.TabIndex = 3;
@@ -90,7 +90,7 @@
             // lbCountry
             // 
             this.lbCountry.AutoSize = true;
-            this.lbCountry.Location = new System.Drawing.Point(406, 87);
+            this.lbCountry.Location = new System.Drawing.Point(406, 94);
             this.lbCountry.Name = "lbCountry";
             this.lbCountry.Size = new System.Drawing.Size(60, 20);
             this.lbCountry.TabIndex = 5;
@@ -99,7 +99,7 @@
             // lbCity
             // 
             this.lbCity.AutoSize = true;
-            this.lbCity.Location = new System.Drawing.Point(409, 144);
+            this.lbCity.Location = new System.Drawing.Point(406, 147);
             this.lbCity.Name = "lbCity";
             this.lbCity.Size = new System.Drawing.Size(34, 20);
             this.lbCity.TabIndex = 6;
@@ -107,14 +107,14 @@
             // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(152, 87);
+            this.txtCompanyName.Location = new System.Drawing.Point(152, 91);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(193, 27);
             this.txtCompanyName.TabIndex = 10;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(521, 33);
+            this.txtEmail.Location = new System.Drawing.Point(506, 41);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(180, 27);
             this.txtEmail.TabIndex = 12;
@@ -133,7 +133,7 @@
             "Saudi Arabia",
             "Franch",
             "United Kingdom"});
-            this.cboCountry.Location = new System.Drawing.Point(519, 88);
+            this.cboCountry.Location = new System.Drawing.Point(506, 94);
             this.cboCountry.Name = "cboCountry";
             this.cboCountry.Size = new System.Drawing.Size(182, 28);
             this.cboCountry.TabIndex = 13;
@@ -150,8 +150,9 @@
             "Chicago",
             "Washington DC",
             "Sydney",
-            "Seoul"});
-            this.cboCity.Location = new System.Drawing.Point(519, 144);
+            "Seoul",
+            "XiangHai"});
+            this.cboCity.Location = new System.Drawing.Point(506, 144);
             this.cboCity.Name = "cboCity";
             this.cboCity.Size = new System.Drawing.Size(182, 28);
             this.cboCity.TabIndex = 14;
@@ -159,7 +160,7 @@
             // btnSave
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSave.Location = new System.Drawing.Point(152, 240);
+            this.btnSave.Location = new System.Drawing.Point(190, 224);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 29);
             this.btnSave.TabIndex = 21;
@@ -170,7 +171,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(467, 240);
+            this.btnCancel.Location = new System.Drawing.Point(476, 224);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 29);
             this.btnCancel.TabIndex = 22;
@@ -179,7 +180,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(152, 133);
+            this.txtPassword.Location = new System.Drawing.Point(152, 144);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(193, 27);
             this.txtPassword.TabIndex = 23;
