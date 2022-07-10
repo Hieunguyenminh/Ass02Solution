@@ -72,7 +72,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(271, 27);
             this.txtEmail.TabIndex = 4;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // txtPassword
             // 
@@ -117,9 +116,10 @@
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.lbLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.Text = "frmLogin";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

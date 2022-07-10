@@ -11,7 +11,7 @@ namespace SalesWinApp
         private MemberRespository member = new MemberRespository();
         public bool UserSuccessfullAuthentication { get; set; }
         public bool isAdmin { get; set; }
-        public int id{ get; private set; }
+        public int id { get; private set; }
         public frmLogin()
         {
             InitializeComponent();
@@ -19,12 +19,12 @@ namespace SalesWinApp
 
         private void btnLog_Click(object sender, EventArgs e)
         {
-            string json=string.Empty;
+            string json = string.Empty;
 
             //read json file
             using (StreamReader reader = new StreamReader("appsettings.json"))
             {
-                json = reader.ReadToEnd(); 
+                json = reader.ReadToEnd();
             }
 
             JavaScriptSerializer jsConverter = new JavaScriptSerializer();
@@ -42,38 +42,41 @@ namespace SalesWinApp
                 {
                     isAdmin = true
                 };
-                Close();
+                this.Close();
+                frmMain.ShowDialog();
                 UserSuccessfullAuthentication = true;
                 isAdmin = true;
                 isMem = true;
             }
-
-            var members = member.GetMembers();
-
-            foreach(var i in members)
-            {
-                if (i.Email.Equals(txtEmail.Text) && i.Password.Equals(txtPassword.Text))
-                {
-                    frmMain frm = new frmMain()
-                    {
-                        isAdmin = false
-                    };
-                Close();
-                    UserSuccessfullAuthentication = true;
-                    isAdmin = false;
-                    id = i.MemberId;
-                    isMem = true;
-                }
-            }
-            if (isMem == true)
-            {
-                MessageBox.Show("Login Successfully", "Right User");
-            }
             else
             {
-                MessageBox.Show("Wrong Email or password, please try again", "Login Failed!!!");
-            }
+                var members = member.GetMembers();
 
+                foreach (var i in members)
+                {
+                    if (i.Email.Equals(txtEmail.Text) && i.Password.Equals(txtPassword.Text))
+                    {
+                        frmMain frm = new frmMain()
+                        {
+                            isAdmin = false
+                        };
+                        this.Close();
+                        frm.ShowDialog();
+                        UserSuccessfullAuthentication = true;
+                        isAdmin = false;
+                        id = i.MemberId;
+                        isMem = true;
+                    }
+                }
+                if (isMem == true)
+                {
+                    MessageBox.Show("Login Successfully", "Right User");
+                }
+                else
+                {
+                    MessageBox.Show("Wrong user name or password, please try again", "Login Failed!!!");
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -84,6 +87,12 @@ namespace SalesWinApp
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtPassword.Text = "admin@@";
+            txtEmail.Text = "admin@fstore.com";
         }
     }
 }

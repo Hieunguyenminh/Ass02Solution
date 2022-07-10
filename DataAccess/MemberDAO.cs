@@ -75,13 +75,13 @@ namespace DataAcess
         }//GetMemberByName end
         //--------------------------------------------------------------------------------------
         //Get Member List by City and Country
-        public List<Member> GetMemberByCityAndCountry(string city, string country)
+        public List<Member> GetMemberByCityOrCountry(string city, string country)
         {
             List<Member> result = new List<Member>();
             List<Member> MembersList = GetMembersList();
-            for (int i = 0; i <= MembersList.Count; i++)
+            for (int i = 0; i < MembersList.Count; i++)
             {
-                if (MembersList[i].City == city && MembersList[i].Country == country)
+                if (MembersList[i].City == city || MembersList[i].Country == country)
                 {
                     result.Add(MembersList[i]);
                 }

@@ -36,12 +36,12 @@
             this.lbCountry = new System.Windows.Forms.Label();
             this.lbCity = new System.Windows.Forms.Label();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.cboCountry = new System.Windows.Forms.ComboBox();
             this.cboCity = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbMemberID
@@ -63,7 +63,7 @@
             // lbCompanyName
             // 
             this.lbCompanyName.AutoSize = true;
-            this.lbCompanyName.Location = new System.Drawing.Point(12, 91);
+            this.lbCompanyName.Location = new System.Drawing.Point(11, 91);
             this.lbCompanyName.Name = "lbCompanyName";
             this.lbCompanyName.Size = new System.Drawing.Size(116, 20);
             this.lbCompanyName.TabIndex = 2;
@@ -111,15 +111,6 @@
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(193, 27);
             this.txtCompanyName.TabIndex = 10;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(152, 144);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.ReadOnly = true;
-            this.txtPassword.Size = new System.Drawing.Size(193, 27);
-            this.txtPassword.TabIndex = 11;
             // 
             // txtEmail
             // 
@@ -185,19 +176,25 @@
             this.btnCancel.TabIndex = 22;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(152, 133);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(193, 27);
+            this.txtPassword.TabIndex = 23;
             // 
             // frmMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 347);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cboCity);
             this.Controls.Add(this.cboCountry);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtCompanyName);
             this.Controls.Add(this.lbCity);
             this.Controls.Add(this.lbCountry);
@@ -224,11 +221,11 @@
         private Label lbCountry;
         private Label lbCity;
         private TextBox txtCompanyName;
-        private TextBox txtPassword;
         private TextBox txtEmail;
         private ComboBox cboCountry;
         private ComboBox cboCity;
         private Button btnSave;
         private Button btnCancel;
+        private TextBox txtPassword;
     }
 }

@@ -27,6 +27,8 @@ namespace SalesWinApp
         private void frmMembers_Load(object sender, EventArgs e)
         {
             cboCity.SelectedIndex = 0;
+            cboCountry.SelectedIndex = 0;
+            txtPassword.Enabled = true;
             txtMemberID.Enabled = !InsertOrUpdate;
             if (InsertOrUpdate == true)//update mode
             {
@@ -91,11 +93,6 @@ namespace SalesWinApp
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e) => Close();
 
-        private void txtMemberID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
