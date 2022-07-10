@@ -36,7 +36,7 @@ namespace SalesWinApp
             string password = obj["Default Account"]["password"];
             bool isMem = false;
 
-            if (email.Equals(txtUserName.Text) && password.Equals(txtPassword.Text))
+            if (email.Equals(txtEmail.Text) && password.Equals(txtPassword.Text))
             {
                 frmMain frmMain = new frmMain()
                 {
@@ -54,7 +54,7 @@ namespace SalesWinApp
 
                 foreach (var i in members)
                 {
-                    if (i.CompanyName.Equals(txtUserName.Text) && i.Password.Equals(txtPassword.Text))
+                    if (i.Email.Equals(txtEmail.Text) && i.Password.Equals(txtPassword.Text))
                     {
                         frmMain frm = new frmMain()
                         {
@@ -92,7 +92,7 @@ namespace SalesWinApp
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtPassword.Text = "admin@@";
-            txtUserName.Text = "admin@fstore.com";
+            txtEmail.Text = "admin@fstore.com";
         }
     }
 }
