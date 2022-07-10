@@ -115,7 +115,7 @@ namespace SalesWinApp
                 txtProductName.DataBindings.Add("Text", source, "ProductName");
                 txtCategoryID.DataBindings.Add("Text", source, "CategoryId");
                 txtUnitPrice.DataBindings.Add("Text", source, "UnitPrice");
-                txtUnitsInStock.DataBindings.Add("Text", source, "UnitslnStock");
+                txtUnitsInStock.DataBindings.Add("Text", source, "UnitInStock");
                 txtWeight.DataBindings.Add("Text", source, "Weight");
 
                 dgvMemberList.DataSource = null;
@@ -218,7 +218,7 @@ namespace SalesWinApp
                         txtProductName.DataBindings.Add("Text", source, "ProductName");
                         txtCategoryID.DataBindings.Add("Text", source, "CategoryId");
                         txtUnitPrice.DataBindings.Add("Text", source, "UnitPrice");
-                        txtUnitsInStock.DataBindings.Add("Text", source, "UnitslnStock");
+                        txtUnitsInStock.DataBindings.Add("Text", source, "UnitInStock");
                         txtWeight.DataBindings.Add("Text", source, "Weight");
 
 
@@ -241,7 +241,7 @@ namespace SalesWinApp
                         txtProductName.DataBindings.Add("Text", source, "ProductName");
                         txtCategoryID.DataBindings.Add("Text", source, "CategoryId");
                         txtUnitPrice.DataBindings.Add("Text", source, "UnitPrice");
-                        txtUnitsInStock.DataBindings.Add("Text", source, "UnitslnStock");
+                        txtUnitsInStock.DataBindings.Add("Text", source, "UnitInStock");
                         txtWeight.DataBindings.Add("Text", source, "Weight");
 
                         dgvMemberList.DataSource = null;
@@ -255,6 +255,11 @@ namespace SalesWinApp
             {
                 MessageBox.Show(ex.Message, "Load product list");
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            LoadOneMember();
         }
     }
 }
