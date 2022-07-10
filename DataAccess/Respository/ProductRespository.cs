@@ -2,7 +2,7 @@
 
 namespace DataAcess.Respository
 {
-    public class ProductRespoitory : IProductRespository
+    public class ProductRespository : IProductRespository
     {
         public void DeleteProduct(int id) => ProductDAO.Instance.RemoveByID(id);
 

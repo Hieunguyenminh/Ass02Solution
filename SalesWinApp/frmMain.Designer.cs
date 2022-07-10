@@ -69,7 +69,6 @@
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
             this.orderToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
             this.orderToolStripMenuItem.Text = "Order";
-            /*this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);*/
             // 
             // frmMain
             // 
@@ -77,10 +76,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 498);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Text = "frmMain";
-            /*this.Load += new System.EventHandler(this.frmMain_Load);*/
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

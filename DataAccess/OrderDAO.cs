@@ -114,6 +114,33 @@ namespace DataAcess
             }
         }//RemoveByID End
          //------------------------------------------------------------------------------------
+         //----------------------------------------------------------------------------------
+         //Filter a Order by OrderID
+        public List<Order> Filter(DateTime a, DateTime b)
+        {
+            var members = new List<Order>();
+            var fil = new List<Order>();
+            try
+            {
+                using var context = new FstoreDBContext();
+                members = context.Orders.ToList();
+                for (int i = 0; i < members.Count(); i++)
+                {
+                    if ((members[i].OrderDate >= a && members[i].OrderDate <= b))
+                    {
+                        fil.Add(members[i]);
+                    }
+                }
+                fil = fil.OrderByDescending(x => x.OrderDate).ToList();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return fil;
+        }
+        //FilterByID End
+        //------------------------------------------------------------------------------------
     }//OrderDAO class end
 
 }

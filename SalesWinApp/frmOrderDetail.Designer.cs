@@ -62,7 +62,6 @@
             this.lbOrderID.Size = new System.Drawing.Size(66, 20);
             this.lbOrderID.TabIndex = 34;
             this.lbOrderID.Text = "Order ID";
-            this.lbOrderID.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbUnitPrice
             // 
@@ -112,6 +111,7 @@
             this.btnLoad.TabIndex = 72;
             this.btnLoad.Text = "&Load Product";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnSave
             // 
@@ -133,6 +133,7 @@
             this.btnCancel.TabIndex = 74;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtProductID
             // 
@@ -147,7 +148,6 @@
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(290, 27);
             this.txtDiscount.TabIndex = 76;
-            this.txtDiscount.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtUnitPrice
             // 
@@ -155,7 +155,6 @@
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(290, 27);
             this.txtUnitPrice.TabIndex = 77;
-            this.txtUnitPrice.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtQuantity
             // 
@@ -163,7 +162,6 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(290, 27);
             this.txtQuantity.TabIndex = 78;
-            this.txtQuantity.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtOrderID
             // 
@@ -172,7 +170,7 @@
             this.txtOrderID.Size = new System.Drawing.Size(290, 27);
             this.txtOrderID.TabIndex = 79;
             // 
-            // frmOrders
+            // frmOrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,7 +190,7 @@
             this.Controls.Add(this.lbOrderID);
             this.Controls.Add(this.lbProductID);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmOrders";
+            this.Name = "frmOrderDetail";
             this.Text = "frmOrder";
             this.Load += new System.EventHandler(this.frmOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemberList)).EndInit();
