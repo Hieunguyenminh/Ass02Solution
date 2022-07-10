@@ -8,7 +8,7 @@ namespace DataAcess.Respository
         IEnumerable<Member> GetMembersByIDList(int memberID);
         Member GetMemberByID(int memberID);
         Member GetMemberByCompanyName(string companyName);
-        List<Member> GetMembersByCityAndCountry(string city, string country);
+        List<Member> GetMembersByCityOrCountry(string city, string country);
         void InsertMember(Member member);
         void UpdateMember(Member member);
         void DeleteMember(int memberID);
