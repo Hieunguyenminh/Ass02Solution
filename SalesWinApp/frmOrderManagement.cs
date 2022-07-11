@@ -16,9 +16,10 @@ namespace SalesWinApp
     {
         public bool isAdmin { get; set; }
         public int id { get; set; }
-
+        IOrderDetailRespository orderDetailRepository = new OrderDetailRespoitory();
         IOrderRespository orderRepository = new OrderRespository();
         BindingSource source;
+        public Order OrderInfor { get; set; }
         public frmOrderManagement()
         {
             InitializeComponent();
@@ -51,13 +52,10 @@ namespace SalesWinApp
         {
             frmOrderDetail frm = new frmOrderDetail
             {
-                isAdmin = this.isAdmin,
-                Text = "Update Order",
+                Text = "Update order detail",
                 InsertOrUpdate = true,
                 OrderInfor = GetOrderObject(),
-                OrderRespository = orderRepository,
-                OrderId = GetOrderObject().OrderId,
-                id = this.id
+                OrderDetailRepository = orderDetailRepository
             };
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -78,34 +76,31 @@ namespace SalesWinApp
             txtDiscount.Text = string.Empty;
         }
         //-----------------------------------------------
-        private Order GetOrderObject()
+        private OrderDetail GetOrderObject()
         {
-            Order member = null;
+            OrderDetail order = null;
             try
             {
-                member = new Order
+                order = new OrderDetail
                 {
                     OrderId = int.Parse(txtOrderID.Text),
-                    OrderDate = DateTime.Parse(txtOrderDate.Text),
-                    ShippedDate = DateTime.Parse(txtShippedDate.Text),
-                    RequiredDate = DateTime.Parse(txtRequiredDate.Text),
-                    Freight = decimal.Parse(txtFreight.Text),
-                    MemberId = int.Parse(txtMemberID.Text),
-                    ProductID = int.Parse(txtProductID.Text),
+                    ProductId = int.Parse(txtProductID.Text),
                     Discount = double.Parse(txtDiscount.Text),
-                    UnitPrice = decimal.Parse(txtUnitPrice.Text),
                     Quantity = int.Parse(txtQuantity.Text),
+                    UnitPrice = decimal.Parse(txtUnitPrice.Text),
+                    MemberID = int.Parse(txtMemberID.Text),
                 };
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Get order");
             }
-            return member;
+            return order;
         }
         public void LoadMemberList()
         {
             var members = orderRepository.GetOrders();
+
 
             try
             {
@@ -134,7 +129,6 @@ namespace SalesWinApp
                 txtRequiredDate.DataBindings.Add("Text", source, "RequiredDate");
                 txtOrderID.DataBindings.Add("Text", source, "OrderId");
                 txtMemberID.DataBindings.Add("Text", source, "MemberId");
-
 
                 dgvMemberList.DataSource = null;
                 dgvMemberList.DataSource = source;
@@ -168,6 +162,60 @@ namespace SalesWinApp
                 MessageBox.Show(ex.Message, "Load order list");
             }
         }
+        public void LoadOrderDetailList()
+        {
+            var members = orderDetailRepository.GetOrderDetailsList();
+            List<Order> list = new List<Order>();
+            /*list.Add(orderRepository.GetOrderByID(this.txtOrderID));*/
+            try
+            {
+                //The BindingSource component is designed to simplify
+                //the process of binding controls to an underlying data source
+                source = new BindingSource();
+                source.DataSource = members.OrderByDescending(member => member.Order.OrderDate);
+
+                txtDiscount.DataBindings.Clear();
+                txtUnitPrice.DataBindings.Clear();
+                txtQuantity.DataBindings.Clear();
+                txtProductID.DataBindings.Clear();
+                txtDiscount.DataBindings.Add("Text", source, "Discount");
+                txtProductID.DataBindings.Add("Text", source, "ProductId");
+                txtQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtUnitPrice.DataBindings.Add("Text", source, "UnitPrice");
+
+                dgvMemberList.DataSource = null;
+                dgvMemberList.DataSource = source;
+
+                if (isAdmin == false)
+                {
+                    if (members.Count() == 0)
+                    {
+                        ClearText();
+                        btnDelete.Enabled = false;
+                    }
+                    else
+                    {
+                        btnDelete.Enabled = false;
+                    }
+                }
+                else
+                {
+                    if (members.Count() == 0)
+                    {
+                        ClearText();
+                        btnDelete.Enabled = false;
+                    }
+                    else
+                    {
+                        btnDelete.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load order detail list");
+            }
+        }
         private void btnLoad_Click(object sender, EventArgs e)
         {
             LoadMemberList();
@@ -177,11 +225,11 @@ namespace SalesWinApp
         {
             frmOrderDetail frm = new frmOrderDetail
             {
-                OrderId = -1,
                 isAdmin = this.isAdmin,
-                Text = "Add Order",
+                Text = "Add Order Detail",
                 InsertOrUpdate = false,
-                OrderRepository = orderRepository
+                OrderId = OrderInfor.OrderId,
+                OrderDetailRepository = orderDetailRepository
             };
             if (frm.ShowDialog() == DialogResult.OK)
             {

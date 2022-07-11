@@ -33,7 +33,7 @@ namespace SalesWinApp
             else ActiveChildForm("frmProductManagements");
         }
 
-        /*private void orderToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void orderToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             if (!CheckExistForm("frmOrderManagements"))
             {
@@ -43,7 +43,7 @@ namespace SalesWinApp
             }
             else ActiveChildForm("frmOrderManagements");
 
-        }*/
+        }
 
         private bool CheckExistForm(string name)
         {

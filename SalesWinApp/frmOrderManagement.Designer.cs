@@ -157,31 +157,31 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(182, 273);
+            this.btnLoad.Location = new System.Drawing.Point(85, 273);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(94, 29);
+            this.btnLoad.Size = new System.Drawing.Size(161, 29);
             this.btnLoad.TabIndex = 12;
-            this.btnLoad.Text = "&Load";
+            this.btnLoad.Text = "&Load History";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(441, 273);
+            this.btnNew.Location = new System.Drawing.Point(342, 273);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(94, 29);
+            this.btnNew.Size = new System.Drawing.Size(181, 29);
             this.btnNew.TabIndex = 13;
-            this.btnNew.Text = "&New";
+            this.btnNew.Text = "&New Order";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(685, 273);
+            this.btnDelete.Location = new System.Drawing.Point(624, 273);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(94, 29);
+            this.btnDelete.Size = new System.Drawing.Size(155, 29);
             this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "&Delete";
+            this.btnDelete.Text = "&Delete Order";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -223,12 +223,12 @@
             // dgvMemberList
             // 
             this.dgvMemberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMemberList.Location = new System.Drawing.Point(-2, 368);
+            this.dgvMemberList.Location = new System.Drawing.Point(27, 372);
             this.dgvMemberList.Name = "dgvMemberList";
             this.dgvMemberList.ReadOnly = true;
             this.dgvMemberList.RowHeadersWidth = 51;
             this.dgvMemberList.RowTemplate.Height = 29;
-            this.dgvMemberList.Size = new System.Drawing.Size(864, 242);
+            this.dgvMemberList.Size = new System.Drawing.Size(864, 198);
             this.dgvMemberList.TabIndex = 19;
             // 
             // lbProductID
@@ -299,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 578);
+            this.ClientSize = new System.Drawing.Size(946, 674);
             this.Controls.Add(this.txtUnitPrice);
             this.Controls.Add(this.txtDiscount);
             this.Controls.Add(this.txtQuantity);
