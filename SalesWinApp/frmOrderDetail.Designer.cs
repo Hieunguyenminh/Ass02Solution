@@ -42,6 +42,8 @@
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtOrderID = new System.Windows.Forms.TextBox();
+            this.lbMemberID = new System.Windows.Forms.Label();
+            this.txtMemberID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemberList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +107,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(24, 288);
+            this.btnLoad.Location = new System.Drawing.Point(24, 325);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(135, 29);
             this.btnLoad.TabIndex = 72;
@@ -116,7 +118,7 @@
             // btnSave
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSave.Location = new System.Drawing.Point(228, 288);
+            this.btnSave.Location = new System.Drawing.Point(230, 325);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 29);
             this.btnSave.TabIndex = 73;
@@ -127,7 +129,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCancel.Location = new System.Drawing.Point(415, 288);
+            this.btnCancel.Location = new System.Drawing.Point(414, 325);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 29);
             this.btnCancel.TabIndex = 74;
@@ -170,11 +172,29 @@
             this.txtOrderID.Size = new System.Drawing.Size(290, 27);
             this.txtOrderID.TabIndex = 79;
             // 
+            // lbMemberID
+            // 
+            this.lbMemberID.AutoSize = true;
+            this.lbMemberID.Location = new System.Drawing.Point(24, 271);
+            this.lbMemberID.Name = "lbMemberID";
+            this.lbMemberID.Size = new System.Drawing.Size(80, 20);
+            this.lbMemberID.TabIndex = 80;
+            this.lbMemberID.Text = "MemberID";
+            // 
+            // txtMemberID
+            // 
+            this.txtMemberID.Location = new System.Drawing.Point(159, 271);
+            this.txtMemberID.Name = "txtMemberID";
+            this.txtMemberID.Size = new System.Drawing.Size(290, 27);
+            this.txtMemberID.TabIndex = 81;
+            // 
             // frmOrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(577, 584);
+            this.Controls.Add(this.txtMemberID);
+            this.Controls.Add(this.lbMemberID);
             this.Controls.Add(this.txtOrderID);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtUnitPrice);
@@ -224,5 +244,7 @@
         private TextBox txtUnitPrice;
         private TextBox txtQuantity;
         private TextBox txtOrderID;
+        private Label lbMemberID;
+        private TextBox txtMemberID;
     }
 }

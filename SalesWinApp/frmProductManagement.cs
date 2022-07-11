@@ -15,7 +15,7 @@ namespace SalesWinApp
     public partial class frmProductManagement : Form
     {
         public bool isAdmin { get; set; }
-        IProductRespository productRepository = new ProductRespoitory();
+        IProductRespository productRepository = new ProductRespository();
         BindingSource source;
         public frmProductManagement()
         {

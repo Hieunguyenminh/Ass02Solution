@@ -55,7 +55,7 @@ namespace SalesWinApp
                 Text = "Update Order",
                 InsertOrUpdate = true,
                 OrderInfor = GetOrderObject(),
-                OrderRepository = orderRepository,
+                OrderRespository = orderRepository,
                 OrderId = GetOrderObject().OrderId,
                 id = this.id
             };
@@ -72,6 +72,10 @@ namespace SalesWinApp
             txtOrderID.Text = string.Empty;
             txtRequiredDate.Text = string.Empty;
             txtShippedDate.Text = string.Empty;
+            txtProductID.Text = string.Empty;
+            txtQuantity.Text = string.Empty;
+            txtUnitPrice.Text = string.Empty;
+            txtDiscount.Text = string.Empty;
         }
         //-----------------------------------------------
         private Order GetOrderObject()
