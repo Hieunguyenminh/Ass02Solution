@@ -39,27 +39,28 @@ namespace SalesWinApp
                 txtRequiredDate.Enabled = false;
                 txtShippedDate.Enabled = false;
                 txtToNum.Enabled = false;
-                dgvMemberList.CellDoubleClick += dgvMemberList_CellDoubleClick;
+                dgvOrder.CellDoubleClick += dgvOrder_CellDoubleClick;
             }
             else
             {
                 btnDelete.Enabled = false;
                 //Register this event to open the frmMemberDetail form that performs updating
-                dgvMemberList.CellDoubleClick += dgvMemberList_CellDoubleClick;
+                dgvOrder.CellDoubleClick += dgvOrder_CellDoubleClick;
             }
         }
-        private void dgvMemberList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             frmOrderDetail frm = new frmOrderDetail
             {
                 Text = "Update order detail",
                 InsertOrUpdate = true,
                 OrderInfor = GetOrderObject(),
+                OrderId = GetOrderObject().OrderId,
                 OrderDetailRepository = orderDetailRepository
             };
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                LoadMemberList();
+                LoadOrderDetailList();
             }
         }
         private void ClearText()
@@ -83,12 +84,11 @@ namespace SalesWinApp
             {
                 order = new OrderDetail
                 {
-                    OrderId = int.Parse(txtOrderID.Text),
+                    OrderId = int.Parse(textBox1.Text),
                     ProductId = int.Parse(txtProductID.Text),
                     Discount = double.Parse(txtDiscount.Text),
                     Quantity = int.Parse(txtQuantity.Text),
                     UnitPrice = decimal.Parse(txtUnitPrice.Text),
-                    MemberID = int.Parse(txtMemberID.Text),
                 };
             }
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace SalesWinApp
             }
             return order;
         }
-        public void LoadMemberList()
+        public void LoadOrderList()
         {
             var members = orderRepository.GetOrders();
 
@@ -166,60 +166,65 @@ namespace SalesWinApp
         {
             var members = orderDetailRepository.GetOrderDetailsList();
             List<Order> list = new List<Order>();
-            /*list.Add(orderRepository.GetOrderByID(this.txtOrderID));*/
-            try
-            {
-                //The BindingSource component is designed to simplify
-                //the process of binding controls to an underlying data source
-                source = new BindingSource();
-                source.DataSource = members.OrderByDescending(member => member.Order.OrderDate);
-
-                txtDiscount.DataBindings.Clear();
-                txtUnitPrice.DataBindings.Clear();
-                txtQuantity.DataBindings.Clear();
-                txtProductID.DataBindings.Clear();
-                txtDiscount.DataBindings.Add("Text", source, "Discount");
-                txtProductID.DataBindings.Add("Text", source, "ProductId");
-                txtQuantity.DataBindings.Add("Text", source, "Quantity");
-                txtUnitPrice.DataBindings.Add("Text", source, "UnitPrice");
-
-                dgvMemberList.DataSource = null;
-                dgvMemberList.DataSource = source;
-
-                if (isAdmin == false)
+           
+                try
                 {
-                    if (members.Count() == 0)
+                    //The BindingSource component is designed to simplify
+                    //the process of binding controls to an underlying data source
+                    source = new BindingSource();
+                    source.DataSource = members.OrderBy(member => member.OrderId);
+
+                    txtDiscount.DataBindings.Clear();
+                    txtUnitPrice.DataBindings.Clear();
+                    txtQuantity.DataBindings.Clear();
+                    txtProductID.DataBindings.Clear();
+                    textBox1.DataBindings.Clear();
+
+                    txtDiscount.DataBindings.Add("Text", source, "Discount");
+                    txtProductID.DataBindings.Add("Text", source, "ProductId");
+                    txtQuantity.DataBindings.Add("Text", source, "Quantity");
+                    txtUnitPrice.DataBindings.Add("Text", source, "UnitPrice");
+                    textBox1.DataBindings.Add("Text", source, "OrderId");
+
+                    dgvOrder.DataSource = null;
+                    dgvOrder.DataSource = source;
+
+                    if (isAdmin == false)
                     {
-                        ClearText();
-                        btnDelete.Enabled = false;
+                        if (members.Count() == 0)
+                        {
+                            ClearText();
+                            btnDelete.Enabled = false;
+                        }
+                        else
+                        {
+                            btnDelete.Enabled = false;
+                        }
                     }
                     else
                     {
-                        btnDelete.Enabled = false;
+                        if (members.Count() == 0)
+                        {
+                            ClearText();
+                            btnDelete.Enabled = false;
+                        }
+                        else
+                        {
+                            btnDelete.Enabled = true;
+                        }
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    if (members.Count() == 0)
-                    {
-                        ClearText();
-                        btnDelete.Enabled = false;
-                    }
-                    else
-                    {
-                        btnDelete.Enabled = true;
-                    }
+                    MessageBox.Show(ex.Message, "Load order detail list");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Load order detail list");
-            }
+            
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            LoadMemberList();
+            LoadOrderList();
         }
+        
 
         private void btnNew_Click(object sender, EventArgs e)
         {
@@ -228,12 +233,12 @@ namespace SalesWinApp
                 isAdmin = this.isAdmin,
                 Text = "Add Order Detail",
                 InsertOrUpdate = false,
-                OrderId = OrderInfor.OrderId,
+                OrderId = 0,
                 OrderDetailRepository = orderDetailRepository
             };
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                LoadMemberList();
+                LoadOrderDetailList();
                 //Set focus member inserted
                 source.Position = source.Count - 1;
             }
@@ -245,7 +250,7 @@ namespace SalesWinApp
             {
                 var member = GetOrderObject();
                 orderRepository.RemoveOrder(member.OrderId);
-                LoadMemberList();
+                LoadOrderDetailList();
             }
             catch (Exception ex)
             {
@@ -261,25 +266,7 @@ namespace SalesWinApp
             try
             {
                 filterList = orderRepository.GetOrderByOrderdDate(DateTime.Parse(txtFromNum.Text), DateTime.Parse(txtToNum.Text));
-                //The BindingSource omponent is designed to simplify
-                //the process of binding controls to an underlying data source
-                // if (i.Country.Equals(this.cboSearchCountry.GetItemText(this.cboSearchCountry.SelectedItem)) && i.City.Equals(this.cboSearchCity.GetItemText(this.cboSearchCity.SelectedItem)))
-
-                /* foreach (var i in members)
-                 {
-                  if (i.Country.Equals(cboSearchCountry.Text) && i.City.Equals(cboSearchCity.Text))
-                     {
-                         filterList.Add(i);
-                     }
-                     else
-                     {
-                         if (filterList.Count == 0)
-                         {
-                             MessageBox.Show("No member matched", "No result");
-                             break;
-                         }
-                     }
-                 }*/
+                
                 if (filterList.Count == 0)
                 {
                     MessageBox.Show("No order matched", "No result");
@@ -316,6 +303,18 @@ namespace SalesWinApp
         private void btnSearch_Click(object sender, EventArgs e)
         {
             FilterMember();
+        }
+
+        
+
+        private void btnLoadOrder_Click(object sender, EventArgs e)
+        {
+            LoadOrderDetailList();
+        }
+
+        private void frmOrderManagement_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

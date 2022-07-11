@@ -16,10 +16,6 @@ namespace BussinessObject.Models
         public DateTime? RequiredDate { get; set; }
         public DateTime? ShippedDate { get; set; }
         public decimal? Freight { get; set; }
-        public int ProductID { get; set; }
-        public double Discount { get; set; }
-        public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
         public virtual Member Member { get; set; } = null!;
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
