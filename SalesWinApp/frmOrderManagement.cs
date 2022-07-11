@@ -91,6 +91,10 @@ namespace SalesWinApp
                     RequiredDate = DateTime.Parse(txtRequiredDate.Text),
                     Freight = decimal.Parse(txtFreight.Text),
                     MemberId = int.Parse(txtMemberID.Text),
+                    ProductID = int.Parse(txtProductID.Text),
+                    Discount = double.Parse(txtDiscount.Text),
+                    UnitPrice = decimal.Parse(txtUnitPrice.Text),
+                    Quantity = int.Parse(txtQuantity.Text),
                 };
             }
             catch (Exception ex)

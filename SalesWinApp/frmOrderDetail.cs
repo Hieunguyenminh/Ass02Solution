@@ -40,7 +40,7 @@ namespace SalesWinApp
                 txtQuantity.Text = OrderInfor.Quantity.ToString();
                 txtDiscount.Text = OrderInfor.Discount.ToString();
                 txtUnitPrice.Text = OrderInfor.UnitPrice.ToString();
-
+                txtMemberID.Text = OrderInfor.MemberID.ToString();
             }
         }
         public void LoadMemberList()
@@ -80,7 +80,7 @@ namespace SalesWinApp
                     Discount = double.Parse(txtDiscount.Text.ToString()),
                     Quantity = int.Parse(txtQuantity.Text.ToString()),
                     UnitPrice = decimal.Parse(txtUnitPrice.Text.ToString()),
-
+                    MemberID = int.Parse(txtMemberID.Text.ToString()),
                 };
                 if (InsertOrUpdate == false)
                 {
